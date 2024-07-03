@@ -19,20 +19,20 @@
    ```
 
 3. **Конфигурација АПИ кључа:**
-   - Obtenha uma chave de API da OpenAI e configure-a no arquivo `app.py`.
-   - Obtenha uma chave de API do Azure Speech e configure-a no arquivo `app.py`.
-
+ - Набавите АПИ кључ од ОпенАИ и конфигуришите га у датотеци `апп.пи`.
+ - Набавите Азуре Спеецх АПИ кључ и конфигуришите га у датотеци `апп.пи`.
+   
 4. **Покрените Фласк сервер:**
    ```bash
    python app.py
    ```
 
 5. **Приступ прегледачем:**
-   Abra seu navegador e vá para `http://localhost:5000`.
+ Отворите претраживач и идите на `http://localhost:5000`.
 
 ### Предуслови
-- Python 3.x instalado
-- Contas e chaves de API da OpenAI e Microsoft Azure
+- Инсталиран Питхон 3.к
+- ОпенАИ и Мицрософт Азуре АПИ налози и кључеви
 
 ### Захтев за приступ коду
 Да бисте приступили комплетном коду, потребно је да затражите ауторизацију преко линка Гоогле Дриве који је доступан [овде](https://drive.google.com/drive/folders/1CIe_LaPUhLRqyJ1iUnjc3hfeoaMgh5Mj?usp=sharing).
