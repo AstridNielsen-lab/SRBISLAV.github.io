@@ -9,5 +9,8 @@
     "postinstall": "wix sync-types",
     "dev": "wix dev",
     "lint": "eslint ."
+  },
+  "dependencies": {
+    "@vercel/blob": "^0.23.3"
   }
 }

@@ -4,42 +4,50 @@ import openai
 import azure.cognitiveservices.speech as speechsdk
 import base64
 import io
+from dotenv import load_dotenv
+import os
+
+# Carregar variáveis de ambiente do arquivo .env
+load_dotenv()
 
 app = Flask(__name__)
 
-# Configurações da OpenAI
-openai.api_key = "sk-proj-YL6DGd50XwDxbv0C9CByT3BlbkFJrJG5mz2ZkD8PHbZyXJ9x"
+# OpenAI configuration
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
-# Configurações do Azure Speech
-azure_api_key = "d00ed40fcc144be0a167721cf5867bee"
-azure_region = "westeurope"
+# Azure Speech configuration
+azure_api_key = os.getenv("AZURE_API_KEY")
+azure_region = os.getenv("AZURE_REGION")
 
-# Lista para armazenar respostas
+# List to store responses
 responses = []
 
-# Inicialização do serviço de fala da Azure
+# Initialize Azure Speech service
 speech_config = speechsdk.SpeechConfig(subscription=azure_api_key, region=azure_region)
-speech_config.speech_synthesis_voice_name = 'pt-BR-AntonioNeural'  # Voz em português do Brasil
 
-# Função para enviar a pergunta ao assistente da OpenAI
+# Function to send question to OpenAI assistant
 @app.route('/send_question', methods=['POST'])
 def send_question():
     try:
         user_question = request.json['question']
 
-        def generate_response():
-            response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
-                messages=[
-                    {"role": "system", "content": "Você é um assistente útil."},
-                    {"role": "user", "content": user_question}
-                ],
-                stream=False  # Desativar o streaming para capturar a resposta completa
-            )
-            complete_text = response['choices'][0]['message']['content']
-            return complete_text
+        # Detect user language (example: assuming you have a function for this)
+        user_language = detect_user_language(request)
 
-        complete_text = generate_response()
+        # Ask about voice preference
+        if user_language == 'en-US':
+            voice_preference = ask_voice_preference()
+            speech_config.speech_synthesis_voice_name = voice_preference
+        elif user_language == 'sr-Cyrl-RS':  # Example for Servo-Croatian
+            speech_config.speech_synthesis_voice_name = 'sr-Cyrl-RS-SophieNeural'  # Example of a female voice in Servo-Croatian
+        else:
+            # Default to Servo-Croatian if not English
+            speech_config.speech_synthesis_voice_name = 'sr-Cyrl-RS-SophieNeural'
+
+        # Generate response from OpenAI
+        complete_text = generate_openai_response(user_question)
+
+        # Convert text to audio using Azure Speech
         audio_base64 = text_to_speech(complete_text)
 
         return jsonify({
@@ -48,13 +56,49 @@ def send_question():
         })
 
     except Exception as e:
-        print(f"Erro ao enviar pergunta para o assistente da OpenAI: {e}")
-        return jsonify({'response': 'Erro ao enviar pergunta para o assistente da OpenAI'}), 500
+        print(f"Error sending question to OpenAI assistant: {e}")
+        return jsonify({'response': 'Error sending question to OpenAI assistant'}), 500
 
-# Função para converter texto em áudio usando Azure Speech
+# Function to detect user language
+def detect_user_language(request):
+    # Implement the logic to detect the user's language
+    # Simple example for demonstration purposes:
+    return 'en-US'  # Return language as US English for this example
+
+# Function to ask about voice preference
+def ask_voice_preference():
+    # Implement the logic to ask the user about voice preference
+    # Simple example for demonstration purposes:
+    return 'en-US-ZiraNeural'  # Return Zira as the female voice in US English for this example
+
+# Function to generate response from OpenAI
+def generate_openai_response(user_question):
+    response = openai.ChatCompletion.create(
+        model="gpt-4",
+        messages=[
+            {"role": "system",
+             "content": "Welcome to the era of home technology with smart robots. I am Srbislav, your personal assistant, ready to introduce our amazing robots."
+            },
+            {"role": "system",
+             "content": "In which language would you like to converse?"
+            },
+            {"role": "user",
+             "content": user_question
+            }
+        ],
+        temperature=1,
+        max_tokens=300,
+        top_p=1,
+        frequency_penalty=0,
+        presence_penalty=0,
+        stream=False
+    )
+    return response['choices'][0]['message']['content']
+
+# Function to convert text to audio using Azure Speech
 def text_to_speech(text):
     try:
-        audio_config = speechsdk.audio.AudioOutputConfig(use_default_speaker=True)  # Ativa o alto-falante padrão
+        audio_config = speechsdk.audio.AudioOutputConfig(use_default_speaker=True)
         synthesizer = speechsdk.SpeechSynthesizer(speech_config=speech_config, audio_config=audio_config)
 
         result = synthesizer.speak_text_async(text).get()
@@ -66,13 +110,13 @@ def text_to_speech(text):
             audio_base64 = base64.b64encode(audio_stream.read()).decode('utf-8')
             return audio_base64
         else:
-            print(f"Erro ao sintetizar áudio: {result.reason}")
+            print(f"Error synthesizing audio: {result.reason}")
             return None
     except Exception as e:
-        print(f"Erro ao converter texto em áudio com Azure Speech: {e}")
+        print(f"Error converting text to audio with Azure Speech: {e}")
         return None
 
-# Rota para página inicial
+# Route for the home page
 @app.route('/')
 def index():
     return render_template('index.html', responses=responses)

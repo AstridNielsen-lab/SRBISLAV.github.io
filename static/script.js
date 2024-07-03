@@ -45,9 +45,9 @@ function startSpeechRecognition() {
 
 // Função para obter o idioma do navegador ou padrão
 function getSpeechRecognitionLanguage() {
-    var navigatorLang = navigator.language || 'hr-HR'; // Idioma do navegador ou padrão para croata
+    var navigatorLang = navigator.language || 'pt-BR'; // Idioma do navegador ou padrão para croata
     // Ajuste para suportar múltiplos idiomas
-    if (navigatorLang.startsWith('pt') || navigatorLang.startsWith('en') || navigatorLang.startsWith('hr')) {
+    if (navigatorLang.startsWith('hr-HR') || navigatorLang.startsWith('en') || navigatorLang.startsWith('hr')) {
         return navigatorLang; // Retorna o idioma do navegador se for pt-BR, en-US ou hr-HR
     } else {
         return 'pt-BR'; // Padrão para português do Brasil

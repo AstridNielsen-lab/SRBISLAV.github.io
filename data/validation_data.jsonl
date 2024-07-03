@@ -1,0 +1,8 @@
+{"text": "Naša kompanija razvija različite modele robota koji će biti dostupni za predprodaju i prodaju posle proizvodnje.", "intent": "introduction"}
+{"text": "SRBISLAV B (ozbiljniji kućni robot za zaštitu): Cena predprodaje: 35.000$, Cena posle proizvodnje: 70.000$, Iznajmljivanje: 1000$ mesečno, Popust na jednokratno plaćanje", "intent": "robot_description", "robot_type": "SRBISLAV B", "preorder_price": 35000, "post_production_price": 70000, "rental_price_monthly": 1000, "discount_on_payment": true}
+{"text": "Svi naši modeli robota će imati osnovne karakteristike, ali će takođe imati sposobnost učenja obrasca vašeg ponašanja, te će moći da se prilagode vašim željama, zahtevima i sposobnostima.", "intent": "robot_capabilities"}
+{"text": "Veštačka inteligencija i neuronska mreža omogućavaće predviđanja i savete u situacijama kada ne znate kako da postupite.", "intent": "robot_capabilities"}
+{"text": "Naši roboti će biti korisni u kućama, firmama, školama, bolnicama i državnim institucijama, pružajući pomoć osobama sa posebnim potrebama kroz različite načine komunikacije: pisanje pitanja i odgovora, glasovne komande, i štampane odgovore.", "intent": "robot_applications"}
+{"text": "Humanost na delu: Nakon početka prodaje robota, kompanija će donirati 10 tipova robota SRBISLAVA porodicama sa decom sa posebnim potrebama! Ovo je vrednost od 300.000 dolara, jer će cena jednog robota biti 30.000 dolara nakon završetka predprodaje.", "intent": "company_philanthropy"}
+{"text": "Generalni direktor i BOG tehnologije: Мирослав Киш", "intent": "company_leader"}
+{"text": "Za više informacija, kontaktirajte nas na @пратилаца ili @истицање.", "intent": "contact_info"}
