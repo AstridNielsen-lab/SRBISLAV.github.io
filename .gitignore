@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 70c2a392debedae54c86d57dc0cfeb23adc2e220
 # Ignore Flax project files
 Binaries/
 Cache/
@@ -44,6 +47,7 @@ _ReSharper*/
 
 # Ignore Nuget packages folder
 packages/
+<<<<<<< HEAD
 =======
 # dependencies
 node_modules/
@@ -52,3 +56,5 @@ node_modules/
 .wix/
 jsconfig.json
 >>>>>>> 06c5747343517accb899015bcb48d55f4f6b8875
+=======
+>>>>>>> 70c2a392debedae54c86d57dc0cfeb23adc2e220
