@@ -41,8 +41,5 @@ Para acessar o código completo, é necessário solicitar autorização através
 Contribuições são bem-vindas! Sinta-se à vontade para enviar pull requests e reportar problemas.
 
 ### Licença
-<<<<<<< HEAD
-Este projeto é licenciado sob a [MIT License](LICENSE).
-=======
 Este projeto é licenciado sob a [MIT License](LICENSE).
 >>>>>>> 70c2a392debedae54c86d57dc0cfeb23adc2e220
