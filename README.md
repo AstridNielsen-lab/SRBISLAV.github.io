@@ -42,3 +42,6 @@ Contribuições são bem-vindas! Sinta-se à vontade para enviar pull requests e
 
 ### Licença
 Este projeto é licenciado sob a [MIT License](LICENSE).
+
+![Easy Cloud DGold Systems DOO Beočin - DGoldMeta NFT VR ](https://raw.githubusercontent.com/AstridNielsen-lab/SRBISLAV.github.io/index.html/SRBISLAV.jpg)
+
