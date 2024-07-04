@@ -44,11 +44,6 @@
 Овај пројекат је лиценциран под [MIT License](LICENSE).
 
 <div style="text-align: center;">
-    <img src="https://github.com/AstridNielsen-lab/SRBISLAV.github.io/blob/index.html/Like%20Look%20Solutions%20(1).gif?raw=true" alt="Easy Cloud DGold Systems DOO Beočin - DGoldMeta NFT VR" style="width: 100%; max-width: 600px;"/>
-</div>
-
-
-<div style="text-align: center;">
     <a href="https://likelook.wixsite.com/solutions">
         <img src="https://github.com/AstridNielsen-lab/SRBISLAV.github.io/blob/index.html/Like%20Look%20Solutions%20(1).gif?raw=true" alt="Easy Cloud DGold Systems DOO Beočin - DGoldMeta NFT VR" style="width: 100%; max-width: 600px;"/>
     </a>
