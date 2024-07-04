@@ -43,8 +43,6 @@
 ### Лиценца
 Овај пројекат је лиценциран под [MIT License](LICENSE).
 
-![Easy Cloud DGold Systems DOO Beočin - DGoldMeta NFT VR ](https://raw.githubusercontent.com/AstridNielsen-lab/SRBISLAV.github.io/index.html/SRBISLAV.jpg)
+<img src="https://raw.githubusercontent.com/AstridNielsen-lab/SRBISLAV.github.io/index.html/SRBISLAV.jpg" alt="Easy Cloud DGold Systems DOO Beočin - DGoldMeta NFT VR" style="width:100%; max-width:600px;"/>
 
-![Easy Cloud DGold Systems DOO Beočin - DGoldMeta NFT VR ](https://raw.githubusercontent.com/AstridNielsen-lab/SRBISLAV.github.io/index.html/Like%20Look%20Solutions.gif)
-
-
+<img src="https://raw.githubusercontent.com/AstridNielsen-lab/SRBISLAV.github.io/index.html/Like%20Look%20Solutions.gif" alt="Easy Cloud DGold Systems DOO Beočin - DGoldMeta NFT VR" style="width:100%; max-width:600px;"/>
