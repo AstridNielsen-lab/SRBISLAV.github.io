@@ -45,3 +45,6 @@
 
 ![Easy Cloud DGold Systems DOO Beočin - DGoldMeta NFT VR ](https://raw.githubusercontent.com/AstridNielsen-lab/SRBISLAV.github.io/index.html/SRBISLAV.jpg)
 
+![Easy Cloud DGold Systems DOO Beočin - DGoldMeta NFT VR ](https://raw.githubusercontent.com/AstridNielsen-lab/SRBISLAV.github.io/index.html/Like%20Look%20Solutions.gif)
+
+
